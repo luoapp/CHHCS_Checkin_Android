@@ -262,7 +262,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         //File file = new File (getExternalStoragePath(this,true)+"/Download",albumName);
 
         //if (!file.mkdirs()) {
-        //Log.e(LOG_TAG, "Directory not created");
+        //Log.e(LOG_TAG, "Directory not created"); Log
         //}
         return file;
     }
