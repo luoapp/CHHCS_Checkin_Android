@@ -442,7 +442,6 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
     }
 
     public boolean isBarcodeValid(Barcode barcode){
-        final String IDprefix = "CHHCS";
-        return barcode.displayValue.startsWith(IDprefix);
+        return barcode.displayValue.startsWith(getResources().getString(R.string.IDprefix));
     }
 }
