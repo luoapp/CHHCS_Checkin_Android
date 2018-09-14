@@ -76,7 +76,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private CompoundButton useFlash;
     private TextView statusMessage;
     private TextView barcodeValue;
-    private TextView personnelID, personnelName;
+    private TextView personnelID, personnelName, timeView;
     private ImageView personnelPhoto;
     //private TextView barcodeMulti;
 
@@ -119,6 +119,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         personnelID = (TextView) findViewById(R.id.ID);
         personnelName = (TextView) findViewById(R.id.Name) ;
         personnelPhoto = (ImageView) findViewById(R.id.portrait);
+        timeView = (TextView) findViewById(R.id.Time);
         //testView = (TextView) findViewById(R.id.textView);
         /*barcodeMulti = (TextView) findViewById(R.id.barcode_collection);
         barcodeMulti.setScroller(new Scroller(this));
@@ -181,6 +182,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
         personnelName.setText("NAME: "+ currentPerson.name);
         personnelID.setText("ID: "+ currentPerson.ID);
         personnelPhoto.setImageBitmap(BitmapFactory.decodeFile(currentPerson.photoPath));
+        SimpleDateFormat s = new SimpleDateFormat("HH:mm");
+        String currentTime = s.format(Calendar.getInstance().getTime());
+        timeView.setText(currentTime);
     }
 
     private void signIn() {
